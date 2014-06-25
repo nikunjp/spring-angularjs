@@ -27,9 +27,9 @@ The standard Java tests can be run with `mvn test`.
 The JavaScript tests use casperjs. Rather than rely on a
 global install of casperjs, this project uses a local install.
 
-To setup casperjs run 'mvn pre-integration-test -Pcasper-setup'. This command will download and setup casperjs (and phantomjs) in basedir of project. 
+To setup casperjs run `mvn pre-integration-test -Pcasper-setup`. This command will download and setup casperjs (and phantomjs) in basedir of project. 
 
-To run casperjs tests run 'mvn integration-test -Pqa'. This command will run all tests under src/test/js/casper/*.js
+To run casperjs tests run `mvn integration-test -Pqa`. This command will run all tests under `src/test/js/casper/*.js`
 
 ## To Do
 
