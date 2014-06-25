@@ -1,14 +1,12 @@
-angular.module("sprang.services", ["ngResource"]).
-    factory('Book', function ($resource) {
+angular.module("sprang.services", ["ngResource"]).factory('Book', function ($resource) {
         var Book = $resource('/api/books/:bookId', {bookId: '@id'},
             {update: {method: 'PUT'}});
         Book.prototype.isNew = function(){
             return (typeof(this.id) === 'undefined');
         }
         return Book;
-    });
-
-angular.module("sprang.services", ["ngResource"]).factory('User', function ($resource) {
+    })
+    .factory('User', function ($resource) {
 		var User = $resource('/api/users/:userId', {userId: '@id'},
 				{update: {method: 'PUT'}});
 		User.prototype.isNew = function(){
@@ -16,7 +14,7 @@ angular.module("sprang.services", ["ngResource"]).factory('User', function ($res
 		}
 		return User;
 	});
-
+	
 angular.module("sprang", ["sprang.services"]).
     config(function ($routeProvider) {
         $routeProvider
