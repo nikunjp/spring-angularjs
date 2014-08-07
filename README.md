@@ -29,12 +29,14 @@ global install of casperjs, this project uses a local install.
 
 To setup casperjs run `mvn pre-integration-test -Pcasper-setup`. This command will download and setup casperjs (and phantomjs) in basedir of project. 
 
-To run casperjs tests run `mvn integration-test -Pqa`. This command will run all tests under `src/test/js/casper/*.js`
+To run casperjs tests run `mvn integration-test -Pqa`. This command will run all tests under `src/test/js/casper/*.js` (Make sure your server is up and running at specified location in pom.xml)
 
 ## To Do
 
 - By default JavaScript tests run can be executed from windows machine, it should be executed from linux box as well
 - Existing casperjs tests are very simple, they should be improved to test CRUD operations
+
+[ ![Codeship Status for nikunjp/spring-angularjs](https://www.codeship.io/projects/b882aca0-0023-0132-7895-0aeb6fd0d794/status)](https://www.codeship.io/projects/29869)
 
 
 
