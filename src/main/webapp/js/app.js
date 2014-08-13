@@ -1,5 +1,5 @@
 angular.module("sprang.services", ["ngResource"]).factory('Book', function ($resource) {
-        var Book = $resource('/api/books/:bookId', {bookId: '@id'},
+        var Book = $resource('api/books/:bookId', {bookId: '@id'},
             {update: {method: 'PUT'}});
         Book.prototype.isNew = function(){
             return (typeof(this.id) === 'undefined');
@@ -7,7 +7,7 @@ angular.module("sprang.services", ["ngResource"]).factory('Book', function ($res
         return Book;
     })
     .factory('User', function ($resource) {
-		var User = $resource('/api/users/:userId', {userId: '@id'},
+		var User = $resource('api/users/:userId', {userId: '@id'},
 				{update: {method: 'PUT'}});
 		User.prototype.isNew = function(){
 			return (typeof(this.id) === 'undefined');
@@ -18,10 +18,10 @@ angular.module("sprang.services", ["ngResource"]).factory('Book', function ($res
 angular.module("sprang", ["sprang.services"]).
     config(function ($routeProvider) {
         $routeProvider
-            .when('/books', {templateUrl: '/views/books/list.html', controller: BookListController})
-            .when('/books/:bookId', {templateUrl: '/views/books/detail.html', controller: BookDetailController})
-        	.when('/users', {templateUrl: '/views/users/list.html', controller: UserListController})
-        	.when('/users/:userId', {templateUrl: '/views/users/detail.html', controller: UserDetailController});
+            .when('/books', {templateUrl: 'views/books/list.html', controller: BookListController})
+            .when('/books/:bookId', {templateUrl: 'views/books/detail.html', controller: BookDetailController})
+        	.when('/users', {templateUrl: 'views/users/list.html', controller: UserListController})
+        	.when('/users/:userId', {templateUrl: 'views/users/detail.html', controller: UserDetailController});
     });
 
 function BookListController($scope, Book) {
